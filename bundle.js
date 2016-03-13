@@ -151,9 +151,7 @@ module.exports = hyperx(function bel (tag, props, children) {
   return el
 })
 
-},{"global/document":5,"hyperx":7}],4:[function(require,module,exports){
-
-},{}],5:[function(require,module,exports){
+},{"global/document":4,"hyperx":5}],4:[function(require,module,exports){
 (function (global){
 var topLevel = typeof global !== 'undefined' ? global :
     typeof window !== 'undefined' ? window : {}
@@ -172,28 +170,7 @@ if (typeof document !== 'undefined') {
 }
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"min-document":4}],6:[function(require,module,exports){
-module.exports = attributeToProperty
-
-var transform = {
-  'class': 'className',
-  'for': 'htmlFor',
-  'http-equiv': 'httpEquiv'
-}
-
-function attributeToProperty (h) {
-  return function (tagName, attrs, children) {
-    for (var attr in attrs) {
-      if (attr in transform) {
-        attrs[transform[attr]] = attrs[attr]
-        delete attrs[attr]
-      }
-    }
-    return h(tagName, attrs, children)
-  }
-}
-
-},{}],7:[function(require,module,exports){
+},{"min-document":7}],5:[function(require,module,exports){
 var attrToProp = require('hyperscript-attribute-to-property')
 
 var VAR = 0, TEXT = 1, OPEN = 2, CLOSE = 3, ATTR = 4
@@ -458,4 +435,27 @@ var closeRE = RegExp('^(' + [
 ].join('|') + ')(?:[\.#][a-zA-Z0-9\u007F-\uFFFF_:-]+)*$')
 function selfClosing (tag) { return closeRE.test(tag) }
 
-},{"hyperscript-attribute-to-property":6}]},{},[1]);
+},{"hyperscript-attribute-to-property":6}],6:[function(require,module,exports){
+module.exports = attributeToProperty
+
+var transform = {
+  'class': 'className',
+  'for': 'htmlFor',
+  'http-equiv': 'httpEquiv'
+}
+
+function attributeToProperty (h) {
+  return function (tagName, attrs, children) {
+    for (var attr in attrs) {
+      if (attr in transform) {
+        attrs[transform[attr]] = attrs[attr]
+        delete attrs[attr]
+      }
+    }
+    return h(tagName, attrs, children)
+  }
+}
+
+},{}],7:[function(require,module,exports){
+
+},{}]},{},[1]);
