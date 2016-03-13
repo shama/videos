@@ -1,0 +1,30 @@
+{
+  "name": "videos",
+  "version": "1.0.0",
+  "description": "https://videos.fraserxu.me",
+  "main": "index.js",
+  "scripts": {
+    "build": "browserify index.js > bundle.js",
+    "start": "wzrd index.js:bundle.js",
+    "deploy": "./deploy.sh"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fraserxu/videos.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fraserxu/videos/issues"
+  },
+  "homepage": "https://github.com/fraserxu/videos#readme",
+  "devDependencies": {
+    "browserify": "^13.0.0",
+    "gh-pages": "^0.11.0",
+    "wzrd": "^1.3.1"
+  },
+  "dependencies": {
+    "bel": "^4.0.0",
+    "bel-video-element": "^1.0.0"
+  }
+}
