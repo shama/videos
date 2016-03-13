@@ -8,7 +8,7 @@ mkdir -p dist
 
 npm run build
 
-cp -r index.html index.html sources bundle.js CNAME dist
+cp -r index.html index.css bundle.js CNAME dist
 
 ./node_modules/.bin/gh-pages -d dist
 
